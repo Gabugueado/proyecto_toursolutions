@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Mis Articulos
+{% endblock %}
+
+{# Plantilla de body #}
+{% block body %}
+<!--body-->
+
+<div class="container my-5">
+    <h1 class="mt-4 mb-3">
+        <small>Mis articulos</small>
+    </h1>
+
+    <!-- /.row -->
+    <div class="container my-5">
+
+        <div class="row">
+            {% for articulo in articulos %}
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <a href="{{path('articulo',{'id':articulo.id})}}">
+                        <img class="card-img-top"
+                            src={% if articulo.imagen|length>0 %}"{{asset(articuloImg~articulo.imagen)}}"{% else %}"http://placehold.it/150x200"{% endif %}
+                            alt="" style="width: 150px;height:200px;">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{path('articulo',{'id':articulo.id})}}">{{ articulo.titulo }}</a>
+                        </h4>
+                        <p class="card-text">{{ articulo.descripcionCorta }}</p>
+                    </div>
+                    <div class="card-footer">
+                    {% if app.user %}
+                    <a  href="{{path('nuevoArticulo',{'id':articulo.id})}}"  class="btn btn-primary">Editar</a> 
+                    <a href="{{path('eliminarArticulo',{'id':articulo.id})}}" class="btn btn-danger">Eliminar</a>
+                    <a href="{{path('articulo',{'id':articulo.id})}}" class="btn btn-info">Ver</a>
+                    {% endif %}
+
+
+                       
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

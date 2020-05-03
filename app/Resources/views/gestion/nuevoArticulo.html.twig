@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'form/articuloForm.html.twig' %}
+
+{% block title %}
+Nuevo Articulo
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mt-4 mb-3">Revista Digital</h1>
+    <h2>Nuevo articulo</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% block javascripts %}
+<script type="text/javascript" src="{{asset('js/nuevaImgArticulo.js')}}"></script>
+{% endblock %}

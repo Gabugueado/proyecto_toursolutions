@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Articulo
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <h1 class="mt-4 mb-3">{{ articulo.titulo }}</h1>
+    <div class="row">
+
+        <div class="col-md-8">
+            <img class="img-fluid" src="{{asset(articuloImg~articulo.imagen)}}" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <h2 class="my-3">descripcion corta</h2>
+            <p>{{ articulo.descripcionCorta }}</p>
+            <h3 class="my-3">descripcion larga</h3>
+            <p>{{ articulo.descripcionLarga }}</p>
+
+        </div>
+
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Related Projects Row -->
+
+<div class="container">
+    <h3 class="my-4">Related Projects</h3>
+
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+                <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+        </div>
+
+    </div>
+</div>
+<!-- /.row -->
+{% endblock %}

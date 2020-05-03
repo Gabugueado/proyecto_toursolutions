@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{# Plantilla de body #}
+{% block body %}
+<!--body-->
+
+<div class="container my-5">
+    <h1 class="mt-4 mb-3">Revista Digital
+        <small>Home</small>
+    </h1>
+
+    <!-- /.row -->
+    <div class="container my-5">
+
+        <div class="row">
+            {% for articulo in articulos %}
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <a href="{{path('articulo',{'id':articulo.id})}}">
+                        <img class="card-img-top"
+                            src={% if articulo.imagen|length>0 %}"{{asset(articuloImg~articulo.imagen)}}"{% else %}"http://placehold.it/150x200"{% endif %}
+                            alt="" style="width: 150px;height:200px;">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{path('articulo',{'id':articulo.id})}}">{{ articulo.titulo }}</a>
+                        </h4>
+                        <p class="card-text">{{ articulo.descripcionCorta }}</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="{{path('articulo',{'id':articulo.id})}}" class="btn btn-primary">Más!</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{# Plantilla de base #}
+{% extends 'base.html.twig' %}
+
+{# Plantilla de titulo #}
+{% block title %}
+Login
+{% endblock %}
+
+{# Plantilla de body #}
+{% block body %}
+<!--body-->
+
+<div class="container">
+    <h1 class="mt-4 mb-3">Revista Digital
+        <small>Posts</small>
+    </h1>
+   
+<!-- /.row -->
+<div class="container y-5">
+    <h1>POSTS</h1>
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ asset('img/card01.png') }}">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+              neque sequi doloribus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Find Out More!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ asset('img/card02.png') }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+              neque sequi doloribus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Find Out More!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ asset('img/card03.png') }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+              neque sequi doloribus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Find Out More!</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- /.row -->
+</div>
+{% endblock %}
