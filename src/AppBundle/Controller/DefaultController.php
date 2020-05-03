@@ -70,13 +70,11 @@ class DefaultController extends Controller
     public function registroAction(Request $request, UserPasswordEncoderInterface $passwordEncoder,$id=null)
     {
         if ($id) {
-            $usuariorepository = $this->getDoctrine()->getRepository(Articulo::class);
+            $usuariorepository = $this->getDoctrine()->getRepository(Usuario::class);
             $usuario = $usuariorepository->find($id);
         } else {
             $usuario = new Usuario();
         }
-
-        $usuario = new Usuario();
         //construyendo el formulario
         $form = $this->createForm(UsuarioType::class, $usuario);
         // 2) handle the submit (will only happen on POST)
@@ -136,4 +134,25 @@ class DefaultController extends Controller
         $usuarios = $usuariorepository->findAll();
         return $this->render('gestion/misUsuarios.html.twig', array("usuarios" => $usuarios));
     }
+
+     /**
+     * @Route("/eliminarUsuario/{id}", name="eliminarUsuario")
+     */
+    public function eliminarUsuarioAction(Request $request, $id = null)
+    {
+        if ($id) {
+            //buscar 
+            $Usuarioepository = $this->getDoctrine()->getRepository(Usuario::class);
+            $usuario = $Usuarioepository->find($id);
+            //borrar
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($usuario);
+            $entityManager->flush();
+        }
+            return $this->redirectToRoute('misArticulos');
+        
+    }
+
+
+
 }

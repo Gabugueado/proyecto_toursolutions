@@ -30,7 +30,7 @@ class ManejadorArticulosController extends Controller
 
         //construyendo el formulario
         $form = $this->createForm(ArticuloType::class, $articulo);
-        // replace this example code with whatever you need
+        
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $usuario = $this->getUser();

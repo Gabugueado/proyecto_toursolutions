@@ -35,14 +35,12 @@ Control de Usuarios
                         <td>{{ usuario.Id }}</td>
                         <td>{{ usuario.Email }}</td>
                         <td>{{ usuario.Username }}</td>
-                        <td><a href="{{path('registro',{usuario':usuario.id})}}" class="btn btn-primary">Editar</a></td>
-                        <td><a href="{{path('registro',{'id':usuario.id})}}" class="btn btn-danger">Eliminar</a></td>
+                        <td><a href="{{path('registro',{'id':usuario.id})}}" class="btn btn-primary">Editar</a></td>
+                        <td><a href="{{path('eliminarUsuario',{'id':usuario.id})}}" class="btn btn-danger">Eliminar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-
-            
 
 
         </div>
